@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './About.css'; // Import your CSS for About page
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { Settings, AccountCircle } from '@mui/icons-material'; // Import icons from Material-UI
-import LogoutIcon from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router-dom';
 
 function About({ setIsLoggedIn }) {
-  const [userImage, setUserImage] = useState(null);
   const navigate = useNavigate();
 
   const buttonDetails = [
     { name: "Model Builder", url: "https://www.google.com", icon: <Settings /> },
     { name: "Assumption Catalogue", url: "https://www.google.com", icon: <Settings /> },
-    { name: "Reporting Dashboard", url: "https://app.powerbi.com/links/I2wc05x7YI?ctid=c05372cf-28bd-4caf-83dd-e8b65c066ce9&pbi_source=linkShare", icon: <img src="/images/dashboard.svg" alt="Model Builder" className="iconsize" />  },
+    { name: "Reporting Dashboard", url: "https://app.powerbi.com/links/I2wc05x7YI?ctid=c05372cf-28bd-4caf-83dd-e8b65c066ce9&pbi_source=linkShare", icon: <img src="/images/dashboard.svg" alt="Model Builder" className="iconsize" /> },
     { name: "Model Repository", url: "https://www.google.com", icon: <Settings /> },
     { name: "Scenario Repository", url: "https://www.google.com", icon: <Settings /> },
     { name: "Admin Module", url: "https://www.google.com", icon: <Settings /> }
@@ -27,17 +25,6 @@ function About({ setIsLoggedIn }) {
     navigate('/login');
   };
 
-  const handleImageUpload = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setUserImage(reader.result);
-    };
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-  };
-
   const handleButtonClick = (url) => {
     window.open(url, '_blank');
   };
@@ -47,47 +34,43 @@ function About({ setIsLoggedIn }) {
       <Grid container spacing={2} className="sectionsContainer">
         <Grid item xs={12} sm={3} className="leftSection">
           <div className="userIconContainer">
-            {userImage ? (
-              <img src={userImage} alt="User" className="userImage" />
-            ) : (
-              <AccountCircle className="userIcon" style={{ fontSize: 120 }} />
-            )}
+            <img src={`/images/Screenshot 2022-02-27 185105.png`} alt="User" className="userImage" />
           </div>
           <div className="aboutLinks">
             <Typography variant="h5" className="userName">Craig Bhai</Typography>
             <ul>
-              <li><a href="#">From Comercials Team</a></li>
-              <li><a href="#">Barnd: Enhertu</a></li>
-              <li><a href="#">Location: USA</a></li>
-              <li><a href="#">Fave sport : Lacros</a></li>
-              <li><a href="#">Fav actor Salu bhai</a></li>
+              <li>From Comercials Team</li>
+              <li>Brand: Enhertu</li>
+              <li>Location: USA</li>
+              <li>Fave sport: Lacrosse</li>
+              <li>Fav actor: Salu Bhai</li>
             </ul>
           </div>
         </Grid>
         <Grid item xs={12} sm={9} className="rightSection">
-          <div className='rightside'>
-          <div className="welcomeContainer">
-            <Typography variant="h4" className="welcomeText">
-              Welcome to DSI Custom Forecasting Platform
-              <span className="preparedLine">Prepared for DSI by Viscadia</span>
-            </Typography>
-          </div>
-          <div className="buttonContainer">
-            {buttonDetails.map((button, index) => (
-              <Grid key={index} item xs={12} sm={6} md={4} className='rightsection-item'>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  className="button"
-                  style={{ backgroundColor: 'white', color: '#00BFFF' }}
-                  onClick={() => handleButtonClick(button.url)}
-                >
-                  {button.icon}
-                  <span className="buttonText">{button.name}</span>
-                </Button>
-              </Grid>
-            ))}
-          </div>
+          <div className="rightside">
+            <div className="welcomeContainer">
+              <Typography variant="h4" className="welcomeText">
+                Welcome to DSI Custom Forecasting Platform
+                <span className="preparedLine">Prepared for DSI by Viscadia</span>
+              </Typography>
+            </div>
+            <div className="buttonContainer">
+              {buttonDetails.map((button, index) => (
+                <Grid key={index} item xs={12} sm={6} md={4} className="rightsection-item">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    className="button"
+                    style={{ backgroundColor: 'white', color: '#00BFFF' }}
+                    onClick={() => handleButtonClick(button.url)}
+                  >
+                    {button.icon}
+                    <span className="buttonText">{button.name}</span>
+                  </Button>
+                </Grid>
+              ))}
+            </div>
           </div>
         </Grid>
       </Grid>

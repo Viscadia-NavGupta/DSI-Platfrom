@@ -69,6 +69,7 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .aboutLinks {
@@ -89,6 +90,14 @@
 
 .aboutLinks li {
   margin-bottom: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  display: block;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #8B0000; /* Red background color */
 }
 
 .aboutLinks a {
@@ -107,7 +116,7 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%; /* Full width */
-  margin-top: 8%; /* Margin to separate from welcome text */
+  margin-top: 6%; /* Margin to separate from welcome text */
 }
 
 .button {
