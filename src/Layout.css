@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  max-width: 50px;
+  margin-right: 10px;
+}
+
+.logoText {
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.navList {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navItem {
+  margin: 0 10px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #8B0000; /* Dark red color on hover */
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-left: 10px; /* Adjusted margin between icons */
+}
+
+.main {
+  flex-grow: 1;
+  /* padding: 20px; */
+}
